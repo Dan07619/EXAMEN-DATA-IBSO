@@ -1,5 +1,5 @@
--- SQL Queries 
-DATABASE1
+-- SQL Queries
+database1
 
 SELECT
     DOC.DNUM AS "# de ticket",
