@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:EXAMEN-DATA-IBSO}/sql_queries/DATABASE1.sql",
+            "name": "dan",
+            "group": "dan"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
