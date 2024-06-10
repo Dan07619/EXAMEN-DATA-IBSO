@@ -2,37 +2,37 @@
 """
 Created on Sun Jun  9 20:52:32 2024
 
-@author: nama_
+@author: dano_
 """
-def valor_letra(letra):
-    """Devuelve el valor de una letra minúscula según su posición en el alfabeto."""
-    return ord(letra) - ord('a') + 1
+# Definir el diccionario con los datos climáticos
+datos_climaticos = {
+    'Ciudad de México': [15, 16, 17, 18, 19, 20, 21],
+    'Guadalajara': [25, 26, 27, 28, 29, 30, 31],
+    'Monterrey': [22, 23, 24, 25, 26, 27, 28],
+    'Cancún': [30, 31, 32, 33, 34, 35, 36],
+    'Tijuana': [18, 19, 20, 21, 22, 23, 24]
+}
 
-def validar_cadena(cadena):
-    """Verifica si la cadena contiene solo letras minúsculas."""
-    for i, c in enumerate(cadena):
-        if not c.islower():
-            if c.isupper():
-                return False, f"Cambia a minúscula la letra '{c}' en la posición {i + 1}."
-            elif c.isdigit():
-                return False, f"Cambia el número en la posición {i + 1} por una letra minúscula."
-    return True, ""
+# Calcular estadísticas de temperatura
+estadisticas = {}
+for ciudad, temperaturas in datos_climaticos.items():
+    temp_promedio = sum(temperaturas) / len(temperaturas)
+    temp_max = max(temperaturas)
+    temp_min = min(temperaturas)
+    estadisticas[ciudad] = {
+        'Promedio': temp_promedio,
+        'Máxima': temp_max,
+        'Mínima': temp_min
+    }
 
-def suma_valores_cadena(cadena):
-    """Calcula la suma de los valores de las letras en la cadena."""
-    return sum(valor_letra(c) for c in cadena)
+# Determinar la ciudad con la temperatura promedio más alta y más baja
+ciudad_temp_mas_alta = max(estadisticas, key=lambda x: estadisticas[x]['Promedio'])
+ciudad_temp_mas_baja = min(estadisticas, key=lambda x: estadisticas[x]['Promedio'])
 
-def main():
-    while True:
-        cadena = input("Introduce una cadena de letras minúsculas: ")
-        es_valida, mensaje = validar_cadena(cadena)
-        
-        if es_valida:
-            suma = suma_valores_cadena(cadena)
-            print(f"La suma de los valores de las letras en la cadena es: {suma}")
-            break
-        else:
-            print(mensaje)
+# Mostrar las estadísticas y resultados
+print("Estadísticas de temperaturas:")
+for ciudad, stats in estadisticas.items():
+    print(f"{ciudad}: Promedio={stats['Promedio']}°C, Máxima={stats['Máxima']}°C, Mínima={stats['Mínima']}°C")
 
-if __name__ == "__main__":
-    main()
+print(f"\nLa ciudad con la temperatura promedio más alta es {ciudad_temp_mas_alta} con {estadisticas[ciudad_temp_mas_alta]['Promedio']}°C")
+print(f"La ciudad con la temperatura promedio más baja es {ciudad_temp_mas_baja} con {estadisticas[ciudad_temp_mas_baja]['Promedio']}°C")
