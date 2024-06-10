@@ -2,10 +2,11 @@
 """
 Created on Fri Jun  7 13:11:40 2024
 
-@author: nama_
+@author: dano_
 """
-import requests
 import json
+
+import requests
 
 # API Key de NY Times
 API_KEY = 'ZshS04fwd6atH6SEcZ67Nfy8aigRXhwh'
