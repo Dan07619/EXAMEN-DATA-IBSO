@@ -2,16 +2,18 @@
 """
 Created on Thu Jun  6 23:28:15 2024
 
-@author: nama_
+@author: dano_
 """
 
-import pandas as pd 
+import pandas as pd
 
 df_promociones = pd.read_csv('C:/Users/nama_/Downloads/Examen IBSO_1_24-4-2024/Prueba_Promociones.csv')
 ruta = 'C:/Users/nama_/Downloads/Examen IBSO_1_24-4-2024/Prueba_Promociones.csv'
 
-import pandas as pd
 from datetime import datetime, timedelta
+
+import pandas as pd
+
 
 # Función para cargar el archivo CSV
 def cargar_csv(ruta):
